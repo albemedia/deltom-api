@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My First Local App</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+        }
+
+        input {
+            border: 2px #999 solid;
+            font-size: 1em;
+            padding: 5px;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+        }
+
+        button {
+            width: 30%;
+            padding: 5px 0px 5px 0px;
+            background: green;
+            color: white;
+            border-radius: 20px;
+            float: right;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        #app {
+            width: 460px;
+            box-sizing: border-box;
+            padding: 40px;
+            border: 1px solid #858585;
+            border-radius: 8px;
+            margin: 0 auto 0 auto;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Welcome</h1>
+        <form action="/api/customers" method="POST">
+            <label>Nombre:</label>
+            <input type="text" placeholder="Nombre" name="name" />
+            <label>Apellido:</label>
+            <input type="text" placeholder="Apellido" name="lastName" />
+            <label>Compania:</label>
+            <input type="text" placeholder="Nombre de la Compania" name="company" />
+            <label>CUIT:</label>
+            <input type="text" placeholder="00-00000000-00" name="cuit" />
+            <label>E-mail:</label>
+            <input type="text" placeholder="sunombre@sucompania.com" name="email" />
+            <label>TLF:</label>
+            <input type="text" placeholder="11 555-5555" name="tlf" />
+            <label>Celular:</label>
+            <input type="text" placeholder="15 555-5555" name="mobile" />
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
