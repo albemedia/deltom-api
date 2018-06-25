@@ -4,7 +4,7 @@
   "description": "API for Deltom CMR",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=production&& nodemon index",
+    "start": "export NODE_ENV=development&& node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jesus Alvarez",
