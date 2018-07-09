@@ -41,6 +41,7 @@ class Base {
   delete(query) {
     return this.model.findOneAndRemove(query).then(result => {
       const response = {};
+      response["data"] = result;
       response["status"] = "ok";
       return response;
     });

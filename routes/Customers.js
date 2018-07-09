@@ -137,15 +137,8 @@ router.put("/:id", function(req, res) {
 
 //Delete a Customer
 router.delete("/:id", (req, res) => {
-  console.log("DELETE ITEM");
-  customers.findOneAndRemove({ cuit: req.params.id }, err => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    res.status(200);
-    res.json({
-      success: true
-    });
+  Customer.delete({ cuit: req.params.id }).then(response => {
+    res.send(response);
   });
 });
 
