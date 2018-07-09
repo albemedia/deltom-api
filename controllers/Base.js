@@ -14,7 +14,14 @@ class Base {
         response[this.modelName] = result;
         return response;
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        const response = {
+          status: "error",
+          message: "There was an Error listing this data",
+          error
+        };
+        return response;
+      });
   }
 
   create(data) {
@@ -39,12 +46,22 @@ class Base {
   }
 
   delete(query) {
-    return this.model.findOneAndRemove(query).then(result => {
-      const response = {};
-      response["data"] = result;
-      response["status"] = "ok";
-      return response;
-    });
+    return this.model
+      .findOneAndRemove(query)
+      .then(result => {
+        const response = {};
+        response["data"] = result;
+        response["status"] = "ok";
+        return response;
+      })
+      .catch(error => {
+        const response = {
+          status: "error",
+          message: "There was an Error deleting this data",
+          error
+        };
+        return response;
+      });
   }
 
   show() {
